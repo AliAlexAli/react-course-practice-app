@@ -1,7 +1,7 @@
 # Design plan
-![Design plan](./screen.PNG)  
+![Design plan](./screen.png)  
 
-![Design plan](./screen-with-validation.PNG)
+![Design plan](./screen-with-validation.png)
 
 
 # Getting Started with Create React App
