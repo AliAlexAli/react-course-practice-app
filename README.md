@@ -1,5 +1,10 @@
+- a hozzáadás validál, csak akkor adja hozzá, ha minden adat megadott, egyébként "pirossal" és szöveggel jelzi.
+- alatta a megadott felhasználókat kilistázza, az adatokat elmenti és betölti localStorage-ból is
+- a keresővel a felhasználónév alapján keres részlegesen ("bel" is behozza "bela"-t)
+- törlés gomb-bal töröl
+
 # Design plan
-![Design plan](./screen.png)  
+![Design plan](./screen.png)
 
 ![Design plan](./screen-with-validation.png)
 
