@@ -1,25 +1,25 @@
-.container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-bottom: 20px;
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 20px;
 }
 
-.container input{
-    padding: 10px;
+.container input {
+  padding: 10px;
 }
 
 .warning {
-    position: absolute;
-    bottom: -10px;
-    color: red;
+  position: absolute;
+  bottom: -10px;
+  color: red;
 }
 
 .invalid {
-    color: red;
+  color: red;
 }
 
 .invalid input {
-    border: 1px solid red;
+  border: 1px solid red;
 }
