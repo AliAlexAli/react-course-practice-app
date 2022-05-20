@@ -1,34 +1,32 @@
-import classes from "./FormInput.module.css";
+import { FormControl, FormHelperText, TextField } from "@mui/material";
 
-const FormInput = ({
-  value,
-  valid,
-  changeHandler,
-  blurHandler,
-  type,
-  id,
-  label,
-}) => {
+const FormInput = ({ type, id, label, register, error, require }) => {
   return (
-    <div
-      className={`${classes.container} ${
-        valid === false ? classes.invalid : ""
-      }`}
+    <FormControl
+      sx={{
+        my: 2,
+      }}
     >
-      <label htmlFor={id}>{label}</label>
-      <input
+      <TextField
+        sx={{
+          backgroundColor: "white",
+        }}
+        variant="outlined"
+        label={label}
+        error={error}
+        {...register(id, require)}
         type={type}
         id={id}
-        onChange={changeHandler}
-        onBlur={blurHandler}
-        value={value}
-      ></input>
-      {valid === false ? (
-        <pre className={classes.warning}>A mező kitöltése kötelező</pre>
+        aria-describedby="helper-text"
+      ></TextField>
+      {error ? (
+        <FormHelperText id="helper-text" error>
+          A mező kitöltése kötelező
+        </FormHelperText>
       ) : (
         ""
       )}
-    </div>
+    </FormControl>
   );
 };
 

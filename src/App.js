@@ -68,8 +68,8 @@ function App() {
 
   return (
     <ItemsContext.Provider value={{ data, addData, removeData, editData }}>
-      <AddItem className="container" onSubmit={addData} />
-      <ListItems className="container" />
+      <AddItem onSubmit={addData} />
+      <ListItems />
     </ItemsContext.Provider>
   );
 }

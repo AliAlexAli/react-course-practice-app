@@ -1,7 +1,7 @@
-import classes from "./Item.module.css";
 import ItemsContext from "../../ItemsContext";
 import { useContext, useState } from "react";
 import AddItem from "../AddItemForm/AddItem";
+import { Button, Card, Grid, Typography } from "@mui/material";
 
 const Item = ({ data }) => {
   const { removeData, editData } = useContext(ItemsContext);
@@ -16,14 +16,40 @@ const Item = ({ data }) => {
   };
 
   return (
-    <div>
-      <div className={classes.container}>
-        <div>{`${data.name} - (${data.email}) - ${data.age} éves`}</div>
-        <div className={classes.subcontainer}>
-          <button onClick={modifyHandler(data)}>Módosítás</button>
-          <button onClick={deleteHandler(data)}>Törlés</button>
+    <Card
+      variant="elevation"
+      elevation={2}
+      sx={{
+        m: 2,
+        p: 3,
+        backgroundColor: "grey.200",
+      }}
+    >
+      <Grid container justifyContent="space-between">
+        <Grid>
+          <Typography
+            color="primary"
+            fontWeight="600"
+          >{`${data.name} - (${data.email}) - ${data.age} éves`}</Typography>
+        </Grid>
+        <div>
+          <Button
+            sx={{ mr: 4 }}
+            variant="outlined"
+            color="primary"
+            onClick={modifyHandler(data)}
+          >
+            Módosítás
+          </Button>
+          <Button
+            variant="contained"
+            color="error"
+            onClick={deleteHandler(data)}
+          >
+            Törlés
+          </Button>
         </div>
-      </div>
+      </Grid>
       {showEdit ? (
         <AddItem
           key={data.id}
@@ -36,7 +62,7 @@ const Item = ({ data }) => {
       ) : (
         ""
       )}
-    </div>
+    </Card>
   );
 };
 

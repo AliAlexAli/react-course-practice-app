@@ -1,9 +1,9 @@
 import Item from "../Item/Item";
-import classes from "./ListItems.module.css";
 import ItemsContext from "../../ItemsContext";
 import { useContext, useState, useEffect } from "react";
+import { Grid, Paper, TextField } from "@mui/material";
 
-const ListItems = ({ className }) => {
+const ListItems = () => {
   const { data } = useContext(ItemsContext);
 
   const [filteredData, setFilteredData] = useState(data);
@@ -22,15 +22,27 @@ const ListItems = ({ className }) => {
   }, [data, filterValue, setFilteredData]);
 
   return (
-    <div className={`${className}  ${classes.container}`}>
-      <div className={classes["name-filter_container"]}>
-        <label>Szürés névre</label>
-        <input type="text" onChange={filterChangeHandler}></input>
-      </div>
-      {filteredData.map((element, index) => {
-        return <Item key={index} data={element} />;
-      })}
-    </div>
+    <Paper
+      sx={{
+        backgroundColor: "grey.300",
+        m: 3,
+        p: 3,
+      }}
+    >
+      <Grid container direction="column" alignItems="end">
+        <TextField
+          variant="standard"
+          label="Szürés névre"
+          type="text"
+          onChange={filterChangeHandler}
+        ></TextField>
+        <Grid container direction="column" justifyContent="stretch">
+          {filteredData.map((element, index) => {
+            return <Item key={index} data={element} />;
+          })}
+        </Grid>
+      </Grid>
+    </Paper>
   );
 };
 
