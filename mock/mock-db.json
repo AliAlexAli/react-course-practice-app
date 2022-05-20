@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "id": "c836a369-f762-4442-81d6-2b9ed517590a",
+      "name": "bela12",
+      "email": "bela12@gmail.com",
+      "age": "43"
+    },
+    {
+      "id": "f1f063ac-e6d3-4aa6-80c9-643f4b306c79",
+      "name": "beata21",
+      "email": "bea21@gmail.com",
+      "age": "21"
+    }
+  ]
+}
